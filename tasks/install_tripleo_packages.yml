@@ -1,0 +1,14 @@
+---
+
+- name: Add tripleo repository.
+  package:
+    name: https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20191108012952.2655019.el7.noarch.rpm
+    state: present
+
+- name: Active the configured release for Tripleo.
+  shell: sudo -E tripleo-repos -b {{ TRIPLEO_RELEASE }} current
+
+
+- name: Install the tripleo client.
+  package:
+    name: python-tripleoclient

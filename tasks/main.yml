@@ -1,0 +1,4 @@
+---
+
+- include: misc_tasks.yml
+- include: install_tripleo_packages.yml
